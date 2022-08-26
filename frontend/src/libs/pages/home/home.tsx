@@ -1,9 +1,12 @@
-import { Button, Group, Text, Title } from '@mantine/core'
-import React from 'react'
-
-const Home = () => {
+import { Button, Group, SimpleGrid, Text, Title } from '@mantine/core'
+import React, { FC, forwardRef, Ref } from 'react'
+interface HomeProps {
+    target: Ref<HTMLDivElement>;
+  }
+const Home: FC<HomeProps> = forwardRef(({ target }) => {
     return (
-        <Group
+        <Group  
+            ref={target}
             style={{
                 height: '90vh'
             }} sx={{
@@ -11,7 +14,7 @@ const Home = () => {
                 backgroundPosition: "center",
                 backgroundImage: "url(./Back-ground.jpg)"
             }}>
-            <Group direction="column" spacing="md" position="left" sx={{ marginLeft: 20 }}>
+            <SimpleGrid spacing="sm" sx={{ marginLeft: 20 }}>
                 <Title sx={{ color: "white" }}>
                     Hi!
                     <br />
@@ -20,12 +23,12 @@ const Home = () => {
                 <Text color="#fff" size='md'>
                     Backend developer from Ho Chi Minh city with 2 years experience.
                 </Text>
-                <Button variant="outline">
+                <Button variant="outline" size='xs' style={{width: '200px'}}>
                     Download CV
                 </Button>
-            </Group>
+            </SimpleGrid >
         </Group >
     )
-}
+})
 
 export default Home

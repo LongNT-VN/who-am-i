@@ -1,13 +1,13 @@
 import { Burger, Header, MantineTheme, MediaQuery, Text } from '@mantine/core'
 import React, { FC } from 'react'
 
-interface HeaderCustomProps {
+interface headerCustomProps {
     opened: boolean;
     setOpened: Function;
     theme: MantineTheme;
 }
 
-const HeaderCustom: FC<HeaderCustomProps> = ({ opened, setOpened, theme }) => {
+const HeaderCustom: FC<headerCustomProps> = ({ opened, setOpened, theme }) => {
     return (
         <Header height={70} p="md">
             <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
